@@ -30,11 +30,7 @@ export function NavigationBar() {
 
   return (
     <nav
-      className={`fixed top-4 left-8 right-8 z-50 transition-all duration-300 font-inter ${
-        isScrolled
-          ? "bg-background/90 backdrop-blur-md shadow-sm"
-          : "bg-background"
-      }`}
+      className={`fixed top-4 left-8 right-8 z-50 transition-all duration-300 font-inter dark:bg-[#101828]`}
     >
       <div className="max-w-7xl mx-auto px-8">
         <div className="flex items-center justify-between py-6">
