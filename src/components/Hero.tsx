@@ -18,13 +18,18 @@ const Hero: FC = () => {
   const [forks, setForks] = useState<string>('...');
 
   useEffect(() => {
-    fetchRepoInfo().then(data => {
-      setStars(data.stargazers_count?.toString() ?? '0');
-      setForks(data.forks_count?.toString() ?? '0');
-    }).catch(() => {
-      setStars('N/A');
-      setForks('N/A');
-    });
+    const fetchData = async () => {
+      try {
+        const data = await fetchRepoInfo();
+        setStars(data.stargazers_count?.toString() ?? '0');
+        setForks(data.forks_count?.toString() ?? '0');
+      } catch {
+        setStars('N/A');
+        setForks('N/A');
+      }
+    };
+    
+    fetchData();
   }, []);
 
   const stats: StatItem[] = [
