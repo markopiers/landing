@@ -4,6 +4,8 @@ import type { FC } from 'react';
 import { ChevronRight } from 'lucide-react';
 import CustomButton from './common/CustomButton';
 import CustomCard from './common/CustomCard';
+import { useEffect, useState } from 'react';
+import { fetchRepoInfo } from '@/lib/github';
 
 interface StatItem {
   value: string;
@@ -12,20 +14,38 @@ interface StatItem {
 }
 
 const Hero: FC = () => {
+  const [stars, setStars] = useState<string>('...');
+  const [forks, setForks] = useState<string>('...');
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await fetchRepoInfo();
+        setStars(data.stargazers_count?.toString() ?? '0');
+        setForks(data.forks_count?.toString() ?? '0');
+      } catch {
+        setStars('N/A');
+        setForks('N/A');
+      }
+    };
+    
+    fetchData();
+  }, []);
+
   const stats: StatItem[] = [
     {
-      value: '3',
-      label: 'Core Projects',
-      valueColor: 'text-blue-600 dark:text-blue-400'
-    },
-    {
-      value: '85+',
+      value: stars,
       label: 'GitHub Stars',
       valueColor: 'text-purple-600 dark:text-purple-400'
     },
     {
-      value: '24/7',
-      label: 'Active Monitoring',
+      value: forks,
+      label: 'GitHub Forks',
+      valueColor: 'text-blue-600 dark:text-blue-400'
+    },
+    {
+      value: '3',
+      label: 'Core Projects',
       valueColor: 'text-cyan-600 dark:text-cyan-400'
     },
   ];
