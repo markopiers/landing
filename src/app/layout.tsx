@@ -3,6 +3,7 @@ import { Inter, Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/provider/theme-provider";
 import { NavigationBar } from "@/components/common/NavigationBar";
+import Footer from '@/components/common/Footer';
 
 const inter = Inter({
   variable: "--font-inter",
@@ -44,6 +45,7 @@ export default function RootLayout({
           <main className="pt-32">
             {children}
           </main>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
