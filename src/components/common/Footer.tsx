@@ -1,4 +1,6 @@
-const Footer = () => (
+import React from 'react';
+
+const Footer: React.FC = () => (
   <footer className="py-12 px-6 border-t border-white/20 dark:border-gray-700/20">
     <div className="max-w-7xl mx-auto text-center">
       <div className="flex items-center justify-center space-x-3 mb-6">
@@ -11,7 +13,7 @@ const Footer = () => (
         Forging next-generation open-source web3 tools for the Scout Game ecosystem
       </p>
       <p className="text-sm text-gray-500 dark:text-gray-400">
-        © 2024 Etherion Tools. Open source and community driven.
+        © {new Date().getFullYear()} Etherion Tools. Open source and community driven.
       </p>
     </div>
   </footer>
