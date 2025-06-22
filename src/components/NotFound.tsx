@@ -73,8 +73,8 @@ const NotFound: FC = () => {
             Oops! Page Not Found
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-md mx-auto">
-            The page you're looking for seems to have vanished into the digital void. 
-            Don't worry, it happens to the best of us!
+            The page you&apos;re looking for seems to have vanished into the digital void. 
+            Don&apos;t worry, it happens to the best of us!
           </p>
           <p className="text-sm text-gray-500 dark:text-gray-500 font-mono bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-md inline-block">
             Route: {pathname}
@@ -116,7 +116,7 @@ const NotFound: FC = () => {
           </div>
           <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-2">
             <li>• Check the URL for typos</li>
-            <li>• Use the navigation menu to find what you're looking for</li>
+            <li>• Use the navigation menu to find what you&apos;re looking for</li>
             <li>• Return to the homepage and start fresh</li>
           </ul>
         </div>
@@ -125,4 +125,4 @@ const NotFound: FC = () => {
   );
 };
 
-export default NotFound; 
+export default NotFound;
