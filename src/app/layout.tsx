@@ -3,6 +3,7 @@ import { Inter, Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/provider/theme-provider";
 import { NavigationBar } from "@/components/common/NavigationBar";
+import { Logo } from "@/components/common/Logo";
 import Footer from '@/components/common/Footer';
 
 const inter = Inter({
@@ -23,8 +24,13 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Etherion Tools",
   description: "Web3 innovation through elegant and powerful developer tools",
+  icons: {
+    icon: "/etherion-tools-logo.svg",
+    shortcut: "/etherion-tools-logo.svg",
+    apple: "/etherion-tools-logo.svg",
+  },
   openGraph: {
-    images: ["/logo.png"],
+    images: ["/etherion-tools-logo.svg"],
   },
   icons: {
     icon: "/logo.png",
