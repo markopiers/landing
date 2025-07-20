@@ -32,6 +32,11 @@ export const metadata: Metadata = {
   openGraph: {
     images: ["/etherion-tools-logo.svg"],
   },
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
 };
 
 export default function RootLayout({
